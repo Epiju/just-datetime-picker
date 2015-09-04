@@ -65,7 +65,7 @@ module Just
               return instance_variable_get("@#{field_name}_date") if instance_variable_get("@#{field_name}_date")
               return nil if self.send(field_name).nil?
               
-              self.send(field_name).to_date.to_s
+              self.send(field_name).strftime("%d/%m/%Y")
             end
 
             define_method "#{field_name}_date=" do |v|
